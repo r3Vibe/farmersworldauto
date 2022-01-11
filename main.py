@@ -26,7 +26,9 @@ fw_seed2 = (627,475)
 fw_seed3 = (627,561)
 fw_seed4 = (627,647)
 fw_openarea = (303,276)
-
+fw_addenergy = (1698,148)
+fw_energyinput = (970,531)
+fw_exchange = (963,612)
 
 #timer
 stoneaxe_click = ""
@@ -36,6 +38,7 @@ seed2_click = ""
 seed3_click = ""
 seed4_click = ""
 script_start = time.time()
+
 
 
 def open_site():
@@ -58,6 +61,7 @@ def stoneaxe_mine():
     goto_stoneaxe()
     if stoneaxe_click == "":
         if check_timer() == "00:00:00":
+            add_energy(5)
             pyautogui.click(fw_work)
             time.sleep(10)
             stoneaxe_click = time.time()
@@ -70,6 +74,7 @@ def stoneaxe_mine():
     else:
         if round(((time.time() - stoneaxe_click)/3600)) >= 1:
             if check_timer() == "00:00:00":
+                add_energy(5)
                 pyautogui.click(fw_work)
                 time.sleep(10)
                 stoneaxe_click = time.time()
@@ -88,6 +93,7 @@ def encientaxe_mine():
     goto_encientaxe()
     if encientaxe_click == "":
         if check_timer() == "00:00:00":
+            add_energy(5)
             pyautogui.click(fw_work)
             time.sleep(10)
             encientaxe_click = time.time()
@@ -99,6 +105,7 @@ def encientaxe_mine():
     else:
         if round(((time.time() - encientaxe_click)/3600)) >= 2:
             if check_timer() == "00:00:00":
+                add_energy(5)
                 pyautogui.click(fw_work)
                 time.sleep(10)
                 encientaxe_click = time.time()
@@ -116,6 +123,7 @@ def seed1_farm():
     goto_seed1()
     if seed1_click == "":
         if check_timer() == "00:00:00":
+            add_energy(120)
             pyautogui.click(fw_work)
             time.sleep(10)
             seed1_click = time.time()
@@ -127,6 +135,7 @@ def seed1_farm():
     else:
         if round(((time.time() - seed1_click)/3600)) >= 4:
             if check_timer() == "00:00:00":
+                add_energy(120)
                 pyautogui.click(fw_work)
                 time.sleep(10)
                 seed1_click = time.time()
@@ -233,6 +242,18 @@ def repeat_mine():
         else:
             print(datetime.now().strftime("%H:%M:%S"))
         
+
+def add_energy(amt):
+    pyautogui.click(fw_addenergy)
+    time.sleep(5)
+    pyautogui.click(fw_energyinput)
+    time.sleep(5)
+    keyboard.write(str(amt))
+    time.sleep(5)
+    pyautogui.click(fw_exchange)
+    time.sleep(10)
+
+
 def goto_stoneaxe():
     pyautogui.click(fw_map)
     time.sleep(5)
@@ -312,3 +333,4 @@ if __name__ == '__main__':
     # check_timer()
     # print(pyautogui.position())
     # stoneaxe_mine()
+    # add_energy(200)
