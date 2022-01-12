@@ -94,18 +94,22 @@ def stoneaxe_mine():
         if check_timer() == "00:00:00":
             if int(stoneaxe) <= 24:
                 add_energy(5)
+                
                 pyautogui.click(fw_work)
                 time.sleep(10)
-
-                stoneaxe = int(stoneaxe) + 1
-                addclick('stoneaxe',stoneaxe)
-
-                stoneaxe_click = time.time()
-                script_start = time.time()
-
                 pyautogui.click(fw_openarea)
                 time.sleep(5)
-                encientaxe_mine()
+                
+                if check_timer() == "00:00:00":
+                    stoneaxe_mine()
+                else: 
+                    stoneaxe = int(stoneaxe) + 1
+                    addclick('stoneaxe',stoneaxe)
+
+                    stoneaxe_click = time.time()
+                    script_start = time.time()
+
+                    encientaxe_mine()
             else:
                 addclick('stoneaxe',0)
                 encientaxe_mine()
@@ -116,18 +120,22 @@ def stoneaxe_mine():
             if check_timer() == "00:00:00":
                 if int(stoneaxe) <= 24:
                     add_energy(5)
+
                     pyautogui.click(fw_work)
                     time.sleep(10)
-                    
-                    stoneaxe = int(stoneaxe) + 1
-                    addclick('stoneaxe',stoneaxe)
-
-                    stoneaxe_click = time.time()
-                    script_start = time.time()
-
                     pyautogui.click(fw_openarea)
-                    time.sleep(5)
-                    encientaxe_mine()
+                    time.sleep(5)         
+
+                    if check_timer() == "00:00:00":
+                        stoneaxe_mine()
+                    else:
+                        stoneaxe = int(stoneaxe) + 1
+                        addclick('stoneaxe',stoneaxe)
+
+                        stoneaxe_click = time.time()
+                        script_start = time.time()
+
+                        encientaxe_mine()
                 else:
                     addclick('stoneaxe',0)
                     encientaxe_mine()
@@ -148,19 +156,23 @@ def encientaxe_mine():
         if check_timer() == "00:00:00":
             if int(encientaxe) <= 12:
                 add_energy(5)
+                
                 pyautogui.click(fw_work)
                 time.sleep(10)
-                
-                encientaxe = int(encientaxe) + 1
-                addclick('emcientaxe',encientaxe)
-
-                encientaxe_click = time.time()
                 pyautogui.click(fw_openarea)
-                
                 time.sleep(5)
-                seed1_farm()
+                
+                if check_timer() == "00:00:00":
+                    encientaxe_mine()
+                else:
+                    encientaxe = int(encientaxe) + 1
+                    addclick('encientaxe',encientaxe)
+
+                    encientaxe_click = time.time()
+
+                    seed1_farm()
             else:
-                addclick('emcientaxe',0)
+                addclick('encientaxe',0)
                 seed1_farm()
         else:
             seed1_farm()
@@ -169,19 +181,23 @@ def encientaxe_mine():
             if check_timer() == "00:00:00":
                 if int(encientaxe) <= 12:
                     add_energy(5)
+
                     pyautogui.click(fw_work)
                     time.sleep(10)
-                    
-                    encientaxe = int(encientaxe) + 1
-                    addclick('encientaxe',encientaxe)
-
-                    encientaxe_click = time.time()
                     pyautogui.click(fw_openarea)
-                    
                     time.sleep(5)
-                    seed1_farm()
+
+                    if check_timer() == "00:00:00":
+                        encientaxe_mine()
+                    else:
+                        encientaxe = int(encientaxe) + 1
+                        addclick('encientaxe',encientaxe)
+
+                        encientaxe_click = time.time()
+
+                        seed1_farm()
                 else:
-                    addclick('emcientaxe',0)
+                    addclick('encientaxe',0)
                     seed1_farm()
             else:
                 seed1_farm()
@@ -197,16 +213,21 @@ def seed1_farm():
         if check_timer() == "00:00:00":
             if int(seed1) <= 6:
                 add_energy(120)
+                
                 pyautogui.click(fw_work)
                 time.sleep(10)
-
-                seed1 = int(seed1) + 1
-                addclick('seed1',seed1)
-
-                seed1_click = time.time()
                 pyautogui.click(fw_openarea)
                 time.sleep(5)
-                seed2_farm()
+
+                if check_timer() == "00:00:00":
+                    seed1_farm()
+                else:
+                    seed1 = int(seed1) + 1
+                    addclick('seed1',seed1)
+
+                    seed1_click = time.time()
+
+                    seed2_farm()
             else:
                 addclick('seed1',0)
                 seed2_farm()
@@ -217,14 +238,20 @@ def seed1_farm():
             if check_timer() == "00:00:00":
                 if int(seed1) <= 6:
                     add_energy(120)
+                    
                     pyautogui.click(fw_work)
                     time.sleep(10)
-                    seed1 = int(seed1) + 1
-                    addclick('seed1',seed1)
-                    seed1_click = time.time()
                     pyautogui.click(fw_openarea)
                     time.sleep(5)
-                    seed2_farm()
+
+                    if check_timer() == "00:00:00":
+                        seed1_farm()
+                    else:
+                        seed1 = int(seed1) + 1
+                        addclick('seed1',seed1)
+                        seed1_click = time.time()
+
+                        seed2_farm()
                 else:
                     addclick('seed1',0)
                     seed2_farm()
@@ -237,18 +264,23 @@ def seed1_farm():
 def seed2_farm():
     global seed2_click
     global seed2
-    goto_seed1()
+    goto_seed2()
     if seed2_click == "":
         if check_timer() == "00:00:00":
             if int(seed2) <= 6:
+                
                 pyautogui.click(fw_work)
                 time.sleep(10)
-                seed2 = int(seed2) + 1
-                addclick('seed2',seed2)
-                seed2_click = time.time()
                 pyautogui.click(fw_openarea)
                 time.sleep(5)
-                seed3_farm()
+                
+                if check_timer() == "00:00:00":
+                    seed2_farm()
+                else:
+                    seed2 = int(seed2) + 1
+                    addclick('seed2',seed2)
+                    seed2_click = time.time()
+                    seed3_farm()
             else:
                 addclick('seed2',0)
                 seed3_farm()
@@ -258,14 +290,20 @@ def seed2_farm():
         if round(((time.time() - seed2_click)/3600)) >= 4:
             if check_timer() == "00:00:00":
                 if int(seed2) <= 6:
+                    
                     pyautogui.click(fw_work)
                     time.sleep(10)
-                    seed2 = int(seed2) + 1
-                    addclick('seed2',seed2)
-                    seed2_click = time.time()
                     pyautogui.click(fw_openarea)
                     time.sleep(5)
-                    seed3_farm()
+
+                    if check_timer() == "00:00:00":
+                        seed2_farm()
+                    else:
+                        seed2 = int(seed2) + 1
+                        addclick('seed2',seed2)
+                        seed2_click = time.time()
+
+                        seed3_farm()
                 else:
                     addclick('seed2',0)
                     seed3_farm()
@@ -278,18 +316,24 @@ def seed2_farm():
 def seed3_farm():
     global seed3_click
     global seed3
-    goto_seed1()
+    goto_seed3()
     if seed3_click == "":
         if check_timer() == "00:00:00":
             if int(seed3) <= 6:
+                
                 pyautogui.click(fw_work)
                 time.sleep(10)
-                seed3 = int(seed3) + 1
-                addclick('seed3',seed3)
-                seed3_click = time.time()
                 pyautogui.click(fw_openarea)
                 time.sleep(5)
-                seed4_farm()
+
+                if check_timer() == "00:00:00":
+                    seed3_farm()
+                else:    
+                    seed3 = int(seed3) + 1
+                    addclick('seed3',seed3)
+                    seed3_click = time.time()
+
+                    seed4_farm()
             else:
                 addclick('seed3',0)
                 seed4_farm()
@@ -299,14 +343,20 @@ def seed3_farm():
         if round(((time.time() - seed3_click)/3600)) >= 4:
             if check_timer() == "00:00:00":
                 if int(seed3) <= 6:
+                    
                     pyautogui.click(fw_work)
                     time.sleep(10)
-                    seed3 = int(seed3) + 1
-                    addclick('seed3',seed3)
-                    seed3_click = time.time()
                     pyautogui.click(fw_openarea)
                     time.sleep(5)
-                    seed4_farm()
+
+                    if check_timer() == "00:00:00":
+                        seed3_farm()
+                    else:
+                        seed3 = int(seed3) + 1
+                        addclick('seed3',seed3)
+                        seed3_click = time.time()
+
+                        seed4_farm()
                 else:
                     addclick('seed3',0)
                     seed4_farm()
@@ -318,18 +368,23 @@ def seed3_farm():
 def seed4_farm():
     global seed4_click
     global seed4
-    goto_seed1()
+    goto_seed4()
     if seed4_click == "":
         if check_timer() == "00:00:00":
             if int(seed4)<= 6:
                 pyautogui.click(fw_work)
                 time.sleep(10)
-                seed4 = int(seed4) + 1
-                addclick('seed4',seed4)
-                seed4_click = time.time()
                 pyautogui.click(fw_openarea)
                 time.sleep(5)
-                repeat_mine()
+
+                if check_timer() == "00:00:00":
+                    seed4_farm()
+                else:
+                    seed4 = int(seed4) + 1
+                    addclick('seed4',seed4)
+                    seed4_click = time.time()
+
+                    repeat_mine()
             else:
                 addclick('seed4',0)
                 close()
@@ -341,12 +396,17 @@ def seed4_farm():
                 if int(seed4)<= 6:
                     pyautogui.click(fw_work)
                     time.sleep(10)
-                    seed4 = int(seed4) + 1
-                    addclick('seed4',seed4)
-                    seed4_click = time.time()
                     pyautogui.click(fw_openarea)
                     time.sleep(5)
-                    repeat_mine()
+
+                    if check_timer() == "00:00:00":
+                        seed4_farm()
+                    else:
+                        seed4 = int(seed4) + 1
+                        addclick('seed4',seed4)
+                        seed4_click = time.time()
+    
+                        repeat_mine()
                 else:
                     addclick('seed4',0)
                     close()
@@ -387,6 +447,8 @@ def add_energy(amt):
     time.sleep(5)
     pyautogui.click(fw_exchange)
     time.sleep(10)
+    pyautogui.click(fw_openarea)
+    time.sleep(5)
 
 
 def goto_stoneaxe():
